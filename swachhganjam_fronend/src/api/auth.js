@@ -30,6 +30,8 @@ export const loginWithCredentials = async (userName, userPassword, userRole) => 
       password: userPassword,
       role: userRole,
     });
+    console.log(response);
+    
     console.log("Credentials login response:", response.data);
     return response.data;
   } catch (error) {

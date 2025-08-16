@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../models');
 const authMiddleware = require('../middleware/authMiddleware');
+const crypto=require("crypto")
 const User = db.User;
 
 router.post('/login', async (req, res) => {
@@ -20,25 +21,26 @@ router.post('/login', async (req, res) => {
         const supervisor = await User.findOne({
           where: { username, role: 'admin' }
         });
-        console.log(supervisor.username);
+        
         
         if (!supervisor) {
           return res.status(200).json({ success: false, message: 'Username not found for admin' });
         }
     
         // Compare password
-        const isMatch = await bcrypt.compare(password, supervisor.password);
-        console.log(isMatch);
+        const sha256 = crypto.createHash('sha256').update(password).digest('hex');
+        const isMatch = sha256 === supervisor.password;
+        //const isMatch = await bcrypt.compare(password, supervisor.password);
         
         if (!isMatch) {
           return res.status(200).json({ success: false, message: 'Incorrect password for admin' });
         }
     
         // Check account validity (1-year validity)
-        const oneYearInMs = 365 * 24 * 60 * 60 * 1000;
-        if (Date.now() - new Date(supervisor.createdAt).getTime() > oneYearInMs) {
-          return res.status(200).json({ success: false, message: 'Admin account expired' });
-        }
+        // const oneYearInMs = 365 * 24 * 60 * 60 * 1000;
+        // if (Date.now() - new Date(supervisor.createdAt).getTime() > oneYearInMs) {
+        //   return res.status(200).json({ success: false, message: 'Admin account expired' });
+        // }
     
         // Update supervisor details
         supervisor.updatedAt = new Date();
