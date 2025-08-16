@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --tw-spacing-xl: 10rem;
+  --tw-color-primary: #007bff;
+}
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; 
+  background-color: #ffffff; 
+  color: #333;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+div#modal-modal-description .Mui-error {
+  text-align: left;
+  color: #ff0000;
+  font-size: 14px;
+  margin-left: 0;
+}
+body.dark-mode .date-time-picker input::-webkit-calendar-picker-indicator {
+  filter: invert(1) !important;
+}
+
+
+div#mui-component-select-category.Mui-error {
+  color: #000;
+}
