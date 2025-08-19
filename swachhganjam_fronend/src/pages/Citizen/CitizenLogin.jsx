@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import LoginForm from "../../components/LoginForm";
 import whiteLogo from "../../assets/white-logo.png";
-import mainLogo from "../../assets/logo.jpg";
+import mainLogo from "../../assets/logo1.png";
 import greenLogo from "../../assets/green-logo.png";
 import whitMainLogo from "../../assets/white-main-logo.png"
 import useLoginStore from "../../store/useLoginStore";
@@ -70,7 +70,7 @@ const CitizenLogin = () => {
         <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{ backgroundImage: "url('https://kzmovhe0yz63330cxncb.lite.vusercontent.net/placeholder.svg?height=800&width=800')" }} />
         <div className="relative z-10 flex flex-col h-full p-8 md:p-12">
           <div className="flex items-center gap-2 mb-8">
-            <img src={mainLogo} alt="Logo" className="h-15 rounded-full" />
+            <img src={mainLogo} alt="Logo" className="h-25 " />
             <h1 className="text-2xl font-bold">GOPALPUR N.A.C</h1>
           </div>
           <div className="my-auto">
@@ -106,7 +106,7 @@ const CitizenLogin = () => {
       <div className="flex-4 flex items-center justify-center min-h-screen bg-white overflow-x-hidden px-2">
   <div className="w-full max-w-sm sm:max-w-md px-4 py-4 sm:py-8 min-h-screen sm:min-h-fit text-center justify-center border-none shadow-none sm:shadow-lg sm:border border-gray-300 bg-white">
     <div className="text-center flex items-center justify-center flex-col">
-      <div className="h-40 w-40 sm:h-25 sm:w-25 rounded-full bg-[#eaeaea] flex items-center justify-center mb-6 sm:mb-4">
+      <div className="h-40 w-40 sm:h-25 sm:w-25 rounded-full  flex items-center justify-center mb-6 sm:mb-4">
         <img src={mainLogo} alt="Logo" className="h-30 w-30 sm:h-25  object-contain" />
       </div>
 

@@ -37,10 +37,10 @@ router.post('/login', async (req, res) => {
         }
     
         // Check account validity (1-year validity)
-        // const oneYearInMs = 365 * 24 * 60 * 60 * 1000;
-        // if (Date.now() - new Date(supervisor.createdAt).getTime() > oneYearInMs) {
-        //   return res.status(200).json({ success: false, message: 'Admin account expired' });
-        // }
+       /*  const oneYearInMs = 365 * 24 * 60 * 60 * 1000;
+        if (Date.now() - new Date(supervisor.createdAt).getTime() > oneYearInMs) {
+          return res.status(200).json({ success: false, message: 'Admin account expired' });
+        } */
     
         // Update supervisor details
         supervisor.updatedAt = new Date();
@@ -69,10 +69,10 @@ router.post('/login', async (req, res) => {
         }
     
         // Check account validity (1-year validity)
-        const oneYearInMs = 365 * 24 * 60 * 60 * 1000;
+        /* const oneYearInMs = 365 * 24 * 60 * 60 * 1000;
         if (Date.now() - new Date(supervisor.createdAt).getTime() > oneYearInMs) {
           return res.status(200).json({ success: false, message: 'Supervisor account expired' });
-        }
+        } */
     
         // Update supervisor details
         supervisor.updatedAt = new Date();

@@ -11,12 +11,12 @@ export default function TrackVehicle() {
 const [vehicleList, setVehicleList] = useState( []);
   const [loading, setLoading] = useState(false);
    const token = localStorage.getItem("token");
-
+  
   useEffect(() => {
   if (!token) return;
 
-  const fetchTrackingData = () => {
-    fetch(`${window.config.API_BASE_URL}citizen/trackings`, {
+  const fetchTrackingData = async () => {
+   await  fetch(`${window.config.API_BASE_URL}citizen/trackings`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

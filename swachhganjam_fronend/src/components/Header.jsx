@@ -17,7 +17,7 @@ import {
   Notifications as NotificationsIcon,
 } from "@mui/icons-material";
 import LogoutIcon from "@mui/icons-material/Logout";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo1.png";
 import useLoginStore from "../store/useLoginStore";
 import { useNotificationStore } from "../store/useNotificationStore";
 
